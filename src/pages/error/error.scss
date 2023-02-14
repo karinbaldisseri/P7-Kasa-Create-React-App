@@ -1,0 +1,33 @@
+@use "../../stylesUtils/" as *;
+
+.errorSection {
+  text-align: center;
+  margin: 8vh 0 8vh 0;
+  @include mobiles {
+    margin: 16vh 0 15vh 0;
+  }
+  h1 {
+    font-weight: 700;
+    font-size: 240px;
+    @include tablets {
+      font-size: 175px;
+    }
+    @include mobiles {
+      font-size: 85px;
+    }
+  }
+  h2 {
+    font-size: 32px;
+    margin-bottom: 160px;
+    @include mobiles {
+      font-size: 17px;
+      margin-bottom: 85px;
+    }
+  }
+  a {
+    font-size: 22px;
+    @include mobiles {
+      font-size: 14px;
+    }
+  }
+}
