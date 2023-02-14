@@ -3,6 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getAccommodationById } from "../../api/api";
 import Slideshow from "../../components/slideshow";
 import Collapse from "../../components/collapse";
+import Stars from "../../components/stars";
+import Tags from "../../components/tags";
 import "./accommodation.scss";
 
 export default function Accommodation() {
@@ -34,6 +36,20 @@ export default function Accommodation() {
       {!isLoading && acc && (
         <>
           <Slideshow images={acc.pictures} />
+          <section className="infoSection">
+            <div>
+              <h1>{acc.title}</h1>
+              <p>{acc.location}</p>
+              <Tags tagItems={acc.tags} />
+            </div>
+            <div className="profileContainer">
+              <div className="profileInfo">
+                <p>{acc.host.name}</p>
+                <img src={acc.host.picture} alt="Profile" />
+              </div>
+              <Stars rating={acc.rating} />
+            </div>
+          </section>
           <section className="collapseSection">
             <Collapse header="Description" content={acc.description} />
             <Collapse
